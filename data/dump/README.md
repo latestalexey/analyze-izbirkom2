@@ -2,9 +2,9 @@
 
 # uiks.tsv
 
-Список УИКов из раздела "Данные об открытии помещений для голосования" http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=238 .
+Список УИКов из раздела "[Данные об открытии помещений для голосования](http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=238)".
 
-address берётся со страничек региональных ИКов, например, http://www.kirov.vybory.izbirkom.ru/kirov/ik/4434001113184 . По этому адресу определяются координаты: latitude, longitude.
+`address` берётся со страничек региональных ИКов, например, http://www.kirov.vybory.izbirkom.ru/kirov/ik/4434001113184 . По этому адресу определяются координаты: `latitude`, `longitude`.
 
 
 ```
@@ -17,9 +17,9 @@ id	name	region_id	region_name	oik	tik_id	tik_name	address	latitude	longitude
 
 # odnomandats.tsv
 
-Список фамилий из раздела "Сведения о кандидатах, выдвинутых по одномандатным избирательным округам" http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795849&type=220 .
+Список фамилий из раздела "[Сведения о кандидатах, выдвинутых по одномандатным избирательным округам](http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795849&type=220)".
 
-nominated 1, когда в колонка "выдвижение" = "выдвинут".
+`nominated` 1, когда в колонка "выдвижение" написано "выдвинут".
 
 ```
 id	fio	date	party_id	party_name	oik	nominated
@@ -31,9 +31,9 @@ id	fio	date	party_id	party_name	oik	nominated
 
 # party_results.tsv
 
-Данные из раздела "Сводная таблица предварительных итогов голосования по федеральному избирательному округу" http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=233 .
+Данные из раздела "[Сводная таблица предварительных итогов голосования по федеральному избирательному округу](http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=233)".
 
-uik_id берётся из файла uiks.tsv . Если в колонке строка, например, "apple", то это число голосов за "Яблоко". Если название колонки число, то это номер строки в таблица izbirkom.ru http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=233 . Например, 2 -- это "Число избирательных бюллетеней, полученных участковой избирательной комиссией".
+`uik_id` берётся из файла `uiks.tsv`. Если в колонке строка, например, "apple", то это число голосов за "Яблоко". Если название колонки — число, то это номер строки в [таблице izbirkom.ru](http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=233). Например, 2 — это "Число избирательных бюллетеней, полученных участковой избирательной комиссией".
 
 ```
 uik_id	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	apple	er	gp	green	gs	kommumist	kprf	ldpr	old	parnas	partiot	rodina	rost	sp
@@ -43,11 +43,11 @@ uik_id	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	apple	er	gp	green	gs	kommumi
 401400192787	743	672	0	331	43	298	43	331	6	368	20	2	0	18	0	0	0	0	2	240	1	1	1	14	70	21	7	1	2	2	3	3
 ```
 
-# odnomandat_resuls.tsv
+# odnomandat_results.tsv
 
-Данные из раздела "Сводная таблица предварительных итогов голосования по одномандатному избирательному округу" http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=464 .
+Данные из раздела "[Сводная таблица предварительных итогов голосования по одномандатному избирательному округу](http://www.vybory.izbirkom.ru/region/region/izbirkom?action=show&root=1&tvd=100100067795854&vrn=100100067795849&region=0&global=true&sub_region=0&prver=0&pronetvd=0&vibid=100100067795854&type=464)".
 
-uik_id берётся из файла uiks.tsv. Если row_id меньше 19, то это номер строчки в таблице на izbirkom.ru, как в party_results.tsv. Если больше, то это id из таблицы odnomandats.tsv -- число голосов за одномандатника.
+`uik_id` берётся из файла `uiks.tsv`. Если `row_id` меньше 19, то это номер строчки в таблице на izbirkom.ru, как в `party_results.tsv`. Если больше, то это id из `odnomandats.tsv`, а в колонке число голосов за одномандатника.
 
 
 ```
