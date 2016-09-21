@@ -85,10 +85,10 @@ PARTY_IDS = {
     u'Политическая партия "Партия народной свободы" (ПАРНАС)': 'parnas',
     u'Политическая партия "Российская объединенная демократическая партия "ЯБЛОКО"': 'apple',
     u'Политическая партия "Российская экологическая партия "Зеленые"': 'green',
-    u'Политическая партия "Российская партия пенсионеров за справедливость"': 'old',
+    u'Политическая партия "Российская партия пенсионеров за справедливость"': 'pens',
     u'Политическая партия КОММУНИСТИЧЕСКАЯ ПАРТИЯ КОММУНИСТЫ РОССИИ': 'kommumist',
     u'Политическая партия ЛДПР - Либерально-демократическая партия России': 'ldpr',
-    u'Политическая партия СПРАВЕДЛИВАЯ РОССИЯ': 'sp',
+    u'Политическая партия СПРАВЕДЛИВАЯ РОССИЯ': 'sr',
     u'Самовыдвижение': 'self'
 }
 
@@ -709,8 +709,10 @@ def make_uiks(opened, ik_tree, ik_pages, address_coordinates):
             # some id may have two different parents but usually they
             # have same address
             a, b = records
-            if not (ik_pages_mapping[a.parent].address
-                    == ik_pages_mapping[b.parent].address):
+            # seems to be broken since ik_pages have not parents
+            a = ik_pages_mapping.get(a.parent)
+            b = ik_pages_mapping.get(b.parent)
+            if a and b and a.address != b.address:
                 print >>sys.stderr, 'Same name diff UIKs:', (a.region, a.id, b.id)
                 pass
         ik_region_uik[key] = records[0].id
